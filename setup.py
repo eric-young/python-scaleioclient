@@ -28,7 +28,7 @@ def read(fname):
 
 setuptools.setup(
     name='siolib',
-    version='2.0.2',
+    version='2.0.3',
     description='ScaleIO API base library',
     url='https://github.com/codedellemc/python-scaleioclient',
     license='ASL 2.0',
