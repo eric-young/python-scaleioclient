@@ -1105,3 +1105,19 @@ class ScaleIO(object):
         stats = req.json()[sp_id]
 
         return stats
+
+    def get_configuration(self):
+        """
+        Returns the system, configuration
+        :return: dict of system properties
+        """
+
+        r_uri = '/api/Configuration'
+        req = self._get(r_uri)
+        if req.status_code != 200:
+            raise exceptions.Error('Error retrieving system properties: %s'
+                                   % req.json().get('message'))
+
+        props = req.json()
+
+        return props

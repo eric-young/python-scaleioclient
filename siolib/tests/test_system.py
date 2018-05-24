@@ -80,3 +80,7 @@ class Test_System(BaseTest):
         stats = self.scaleio.get_storage_pool_statistics(self.domain, self.pool, requested_stats)
         self.assertEqual(len(stats), len(requested_stats))
 
+    def test_configuration(self):
+        props = self.scaleio.get_configuration()
+        self.assertIsNotNone(props['systemId'])
+
